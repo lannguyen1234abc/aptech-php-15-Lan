@@ -1,0 +1,45 @@
+.header{
+    background-color:wheat;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center    
+}
+.text-red{
+    background-color:red;
+    height: 150px;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center 
+}
+.con-red{
+    width:30%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center 
+}
+.text-pink{
+    background-color:pink;
+    height:150px;
+    width: 70%;
+    display: flex;
+}
+.carousel{
+    background-color:wheat;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.orange{
+    background-color: orange;
+    height: 150px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
