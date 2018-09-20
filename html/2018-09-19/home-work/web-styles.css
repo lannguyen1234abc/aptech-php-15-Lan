@@ -1,0 +1,92 @@
+.header{
+    background-color: aquamarine;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.logo{
+    width: 30%;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con-logo{
+    background-color: red;
+    width: 90%;
+    height: 80%;
+   
+}
+.adv{
+    width: 70%;
+    height: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.con-adv{
+    
+    width: 95%;
+    height: 80%;
+    text-align: center;
+}
+.content1{
+    background-color: aquamarine;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.images{
+    width: 96%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content2{
+    background-color: aquamarine;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.loainuoc{
+    background-color: white;
+    width: 30%;
+    height: 80%;
+    margin: 20px;
+    
+}
+.content3{
+   
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.list-end{
+   
+    width: 50%;
+    height: 80%;
+    margin: 20px;
+}
+.list{
+    color: black;
+    font-size: 30px;
+}
+.hinh{
+    height: 50%;
+    width: 100%;
+   
+}
+
