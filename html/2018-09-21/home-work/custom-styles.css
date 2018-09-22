@@ -1,0 +1,27 @@
+.Body{
+    background-color: grey;
+    height: 500px;
+}
+.Text--header-left{
+    color: white;
+    display: flex;
+    align-items:center;
+}
+.Text--header-right{
+    color: white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+   
+}
+.p--text{
+    font-size: 20px;
+}
+.Image--height--width{
+    height: 80px;
+    width: 80px;
+}
+.H-W--input--sign{
+    height: 50px;
+    width: 20%;
+}
