@@ -1,0 +1,41 @@
+.Height--header{
+    height: 80px;
+}
+.Height--menu{
+    height: 50px;
+}
+.Height--Intro{
+    height: 50px;
+}
+.Height--slide{
+    height: 400px;
+}
+.H-W--image{
+    width: 250px;
+    height: 250px;
+}
+.H-W--Image-Slide{
+    height: 300px;
+    width: 500px;
+}
+.Height-Produce{
+    height: 1700px;
+}
+.Height-Adv{
+    height: 1100px;
+}
+.Height--footer{
+    height: 200px;
+}
+.Type--word{
+    font-family: Comic Sans MS;
+    font-size: 40px;
+}
+.Body{
+    background-image: url(http://hinhnenppt.com/uploads/images/tuyen-tap-26-hinh-nen-powerpoint-ve-bien-dai-duong-cuc-dep-1490715178-4.jpg);
+}
+.Img--adv{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
