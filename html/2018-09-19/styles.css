@@ -5,17 +5,17 @@
     align-items: center;
     justify-content: center    
 }
-.text-red{
+.logo{
     background-color:red;
-    height: 150px;
+    height: 100%;
     width: 30%;
     display: flex;
-    align-items: center;
-    justify-content: center 
+    glyph-orientation-horizontal: middle;
+    justify-content: center ;
 }
-.con-red{
+.con-logo{
     width:30%;
-    height: 80%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center 

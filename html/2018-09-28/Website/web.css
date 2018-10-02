@@ -1,41 +1,51 @@
 .Height--header{
     height: 80px;
 }
-.Height--menu{
-    height: 50px;
+/*.Height--menu{
+    height: 150px;
 }
 .Height--Intro{
-    height: 50px;
+    height: 200px; */
 }
 .Height--slide{
     height: 400px;
 }
 .H-W--image{
-    width: 250px;
     height: 250px;
 }
 .H-W--Image-Slide{
-    height: 300px;
-    width: 500px;
+    height: 400px;
+    width: 100%;
 }
 .Height-Produce{
     height: 1700px;
 }
 .Height-Adv{
-    height: 1100px;
+    height: 1000px;
 }
 .Height--footer{
     height: 200px;
 }
 .Type--word{
-    font-family: Comic Sans MS;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 40px;
 }
+.Font--Cosmetic{
+    font-family:fantasy;
+    font-size: 30px;
+}
 .Body{
-    background-image: url(http://hinhnenppt.com/uploads/images/tuyen-tap-26-hinh-nen-powerpoint-ve-bien-dai-duong-cuc-dep-1490715178-4.jpg);
+    background-image: url(https://msmobile.com.vn/upload_images/images/hinh-nen-powerpoint-mau-xanh-da-troi-1.jpg);
 }
 .Img--adv{
     width: 300px;
     height: 300px;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 576px){
+    .Font--size{font-size: 20px;}
+}
+@media screen and (min-width: 577px){
+    .Font--size{font-size: 40px; display: flex; justify-content:center;}
 }

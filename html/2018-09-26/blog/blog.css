@@ -8,11 +8,15 @@
     height: 300px;
 }
 .Height--Content3{
-    height: 300px;
+    height: 400px;
 }
 .Height--Content4{
     height: 2000px;
 }
 .Height--Footer{
     height: 200px;
+}
+.Image{
+    height: 356px;
+    width: 200px;
 }

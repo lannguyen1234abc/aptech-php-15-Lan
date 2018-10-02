@@ -1,19 +1,8 @@
 .Body{
     background-color: grey;
-    height: 500px;
+    height: 100vh;
 }
-.Text--header-left{
-    color: white;
-    display: flex;
-    align-items:center;
-}
-.Text--header-right{
-    color: white;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-   
-}
+
 .p--text{
     font-size: 20px;
 }
