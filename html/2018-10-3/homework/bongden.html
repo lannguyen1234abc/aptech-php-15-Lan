@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        
+        <button onclick="bat()"> Bật </button> 
+        <img src="https://www.w3schools.com/js/pic_bulboff.gif" id="js-image">
+        <button onclick="tat()"> Tắt </button> 
+        <button onclick="battat()"> Bật/Tắt </button>
+        <script>
+            var a = document.getElementById('js-image');
+            /*console.log(a.src);*/
+            function bat(){
+                a.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+            }
+            function tat(){
+                a.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+            } 
+            function battat(){
+                if( a.src === "https://www.w3schools.com/js/pic_bulboff.gif"){
+                    a.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+                
+                }else {
+                    a.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+                }
+            }
+        </script>
+    </body>
+</html>
