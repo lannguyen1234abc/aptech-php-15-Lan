@@ -6,7 +6,7 @@
 }
 .Height--Intro{
     height: 200px; */
-}
+
 .Height--slide{
     height: 400px;
 }
@@ -49,3 +49,4 @@
 @media screen and (min-width: 577px){
     .Font--size{font-size: 40px; display: flex; justify-content:center;}
 }
+
