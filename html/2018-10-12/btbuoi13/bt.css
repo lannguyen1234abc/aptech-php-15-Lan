@@ -1,0 +1,96 @@
+.H-W--logo{
+    width: 300px;
+    height: 100px;
+}
+.Header{
+}
+.Menu{}
+.Content{}
+.Feature{}
+.Hot{}
+.Footer{}
+
+.Image1_Content{
+    background-image: url("https://images.unsplash.com/photo-1539161371906-ffc39c3b0a96?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=223a1ea71c44bbe60270de713ea54f45&auto=format&fit=crop&w=334&q=80");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image2_Content{
+    background-image: url("https://images.unsplash.com/photo-1539341029274-a659646db47c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=079022a144cbd5b7b4f8ef0c590ba832&auto=format&fit=crop&w=500&q=80");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image1_Feature{
+    background-image: url("https://images.unsplash.com/photo-1539322079713-9c8618d4e9d8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf46b3d768c8120b3caed212b6cdb91&auto=format&fit=crop&w=334&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image2_Feature{
+    background-image: url("https://images.unsplash.com/photo-1539331604489-f48780244c01?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c30879fff7334b3a79592350b5b5866b&auto=format&fit=crop&w=750&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image3_Feature{
+    background-image: url("https://images.unsplash.com/photo-1539319592399-f2d76ad1e160?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=60324c5683ad0f544113421ee0b0be49&auto=format&fit=crop&w=375&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image4_Feature{
+    background-image: url("https://images.unsplash.com/photo-1502784444187-359ac186c5bb?ixlib=rb-0.3.5&s=8fca57d37211d7915c94deae73eaafe7&auto=format&fit=crop&w=401&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image5_Feature{
+    background-image: url("https://images.unsplash.com/photo-1539278670307-a69d04dc8a75?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e408aa66938d216bb3db4f597e594647&auto=format&fit=crop&w=334&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image1_Hot{
+    background-image: url("https://images.unsplash.com/photo-1539237310789-3fc92b237835?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3925d9830cad815f1edcb74f9ebc648&auto=format&fit=crop&w=375&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image2_Hot{
+    background-image: url("https://images.unsplash.com/photo-1539243135383-e0e4d4d9260c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b21056708964534742134d147c1aae3e&auto=format&fit=crop&w=889&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image3_Hot{
+    background-image: url("https://images.unsplash.com/photo-1539203848979-957c6a462953?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b629dde91aa22b0423b187ad9c78ec20&auto=format&fit=crop&w=358&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image4_Hot{
+    background-image: url("https://images.unsplash.com/photo-1539226174219-ad0316142a12?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d2e6043e8985d76caaaa50a2cd2b1039&auto=format&fit=crop&w=750&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Image5_Hot{
+    background-image: url("https://images.unsplash.com/photo-1539207060514-32eb986923b2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2f38d5f46607023592f632202f07234d&auto=format&fit=crop&w=750&q=80");
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
