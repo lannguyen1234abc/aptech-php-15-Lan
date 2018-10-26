@@ -52,7 +52,7 @@
      for ( $i=0; $i < $datalength; $i++){
          echo "
         <tr>
-        <th> $i </th>
+        <th> ".($i+1)." </th>
         <td> ".$data[$i]['type']." </td>
         <td> ".$data[$i]['property']['price']." </td>
         <td> ".$data[$i]['property']['made']['in']." </td>
