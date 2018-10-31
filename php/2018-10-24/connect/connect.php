@@ -49,7 +49,19 @@ $sql = "CREATE TABLE USERS (
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }*/
-$sql = "SELECT * FROM USERS";
+/*$sql = "SELECT * FROM USERS";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. " - Email: " . $row["email"]. " - Password: " . $row["pass"]. "<br>";
+    }
+} else {
+    echo "0 results";
+}*/
+
+$sql = "SELECT * FROM USERS WHERE id <=3 and id >=2";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -60,5 +72,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
+
 $conn->close();
 ?>
