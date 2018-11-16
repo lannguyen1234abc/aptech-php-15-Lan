@@ -22,23 +22,20 @@
             </tr>
         </thead>
         <tbody>
-            
-            <?php
-                foreach($users as $user){
-                    echo "<tr>";
-                    echo "<td> $user->id </td>";
-                    echo "<td> $user->name </td>";
-                    echo "<td> $user->email </td>";
-                    echo "<td> $user->password </td>";
-                    echo "<td>
-                            <button> Show </button> 
-                            <button> Edit </button> 
-                            <button> Delete </button>  
-                        </td>";
-                    echo "</tr>";
-                }
-            ?>
-            
+                @foreach($users as $user)
+                    <tr>
+                        <td> {{$user->id}} </td>
+                        <td> {{$user->name}} </td>
+                        <td> {{$user->email}} </td>
+                        <td> {{$user->password}} </td>
+                        <td>
+                            <button class='btn btn-danger'> Show </button> 
+                            <button class='btn btn-success'> Edit </button> 
+                            <button class='btn btn-warning'> Delete </button>  
+                        </td>
+                    </tr>
+                @endforeach
+          
         </tbody>
     </table>
 </div>

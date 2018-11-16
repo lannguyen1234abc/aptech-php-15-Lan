@@ -48,16 +48,6 @@
         </tbody>
     </table>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <form action="{{route('users.create')}}" method="GET">
-                <button type="submit">
-                    CREATE AN USER
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
+
 </body>
 </html>

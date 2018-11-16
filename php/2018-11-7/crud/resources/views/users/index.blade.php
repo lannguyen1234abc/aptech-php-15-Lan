@@ -9,6 +9,13 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+
+<div class="container mt-3">
+    <form action="{{route('users.create')}}">
+        <button class="btn btn-danger"> Tạo mới người dùng </button>
+    </form>
+</div>
+
 <div class="container">
     <h1 class="text-center"> Users </h1>
     <table class="table table-hover table-bordered text-center">
@@ -51,5 +58,7 @@
         </tbody>
     </table>
 </div>
+
+
 </body>
 </html>
