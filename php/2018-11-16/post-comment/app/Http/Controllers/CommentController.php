@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
 use App\Comment;
 class CommentController extends Controller
 {
@@ -15,7 +14,7 @@ class CommentController extends Controller
     public function index()
     {
         $comments = Comment::all();
-        return view('post-comment.index', ['comments'=>$comments]);
+        return view('comment.index', ['comments'=>$comments]);
        
     }
 
@@ -26,7 +25,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('post-comment.create');
+        return view('comment.create');
     }
 
     /**
@@ -39,11 +38,9 @@ class CommentController extends Controller
     {
         $comments = Comment::create([
             'comment'=>$request->comment, 
-            'post_id'=>$request->post_id])->post()->create(['title'=>$request->title,
-            'description'=>$request->description,
-            'content'=>$request->content]);
-
-        return redirect()->route('posts.index');
+            'post_id'=>$request->post_id
+            ]);
+        return redirect()->route('comments.index');
     }
 
     /**
@@ -55,7 +52,7 @@ class CommentController extends Controller
     public function show($id)
     {
         $comment = Comment::find($id);
-        return view('post-comment.show', ['comment'=>$comment]);
+        return view('comment.show', ['comment'=>$comment]);
     }
 
     /**
@@ -67,7 +64,7 @@ class CommentController extends Controller
     public function edit($id)
     {
         $comment = Comment::with('post')->find($id);
-        return view('post-comment.edit', ['comment'=> $comment]);
+        return view('comment.edit', ['comment'=> $comment]);
     }
 
     /**
@@ -77,20 +74,16 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Comment $id)
+    public function update(Request $request,$id)
     {
-        $comment = Comment::with('post')->find($id);
+        $comment = Comment::find($id);
         
         $comment->update([
-            'comment' => $request->comment
-        ]);
-        $post->update([
-            'title'=>$request->title,
-            'description'=>$request->description,
-            'content'=>$request->content
+            'comment'=>$request->comment, 
+            'post_id'=>$request->post_id
         ]);
         
-        return redirect()->route('post-comment.show',$id);
+        return redirect()->route('comments.show',$id);
     }
 
     /**
@@ -99,9 +92,9 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $id)
+    public function destroy($id)
     {
-        Post::destroy($id->id);
-        return redirect()->route('posts.index');
+        Comment::destroy($id->id);
+        return redirect()->route('comments.index');
     }
 }

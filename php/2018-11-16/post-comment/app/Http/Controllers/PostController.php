@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
 class PostController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+        return view('post.index', ['posts'=>$posts]);
     }
 
     /**
@@ -23,7 +24,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -34,7 +35,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Post::create([
+            'title' => $request ->title,
+            'description' => $request ->description,
+            'content' => $request ->content
+        ]);
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -43,9 +49,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($p_id)
     {
-        //
+        $post = Post::find($p_id);
+        return view('post.show', ['post'=> $post]);
     }
 
     /**
@@ -54,9 +61,10 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($p_id)
     {
-        //
+        $post = Post::find($p_id);
+        return view('post.edit', ['post' => $post]);
     }
 
     /**
@@ -66,9 +74,19 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $p_id)
     {
-        //
+        $post = Post::find($p_id);
+        /*$user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();*/
+        $post -> update([
+            'title' => $request ->title,
+            'description' => $request ->description,
+            'content' => $request ->content
+        ]);
+        return redirect()->route('posts.show', $p_id);
     }
 
     /**
@@ -77,8 +95,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($p_id)
     {
-        //
+        Post::destroy($p_id);
+        return redirect()->route('posts.index');
     }
 }

@@ -16,10 +16,6 @@
                 <form action="{{route('posts.store')}}" method="POST">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="POST" />
-                    
-                    Comment: <input type="text" id="comment" placeholder="Comment" name="comment">
-
-                    Post_id: <input type="int" id="post_id" placeholder="Post_id" name="post_id">
 
                     Title: <input type="text" id="title" placeholder="Title" name="title" >
 

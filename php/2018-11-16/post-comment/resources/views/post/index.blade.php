@@ -10,13 +10,17 @@
 </head>
 <body>
 
+<div class="container mt-3 mb-3">
+    <form action="{{route('posts.create')}}">
+        <button class="btn btn-danger"> Tạo mới post </button>
+    </form>
+</div>
 <div class="container">
-    <h1 class="text-center"> Post-Comment </h1>
+   
     <table class="table table-hover table-bordered text-center">
         <thead>
             <tr>
                 <th> # </th>
-                <th> Comment </th>
                 <th> Title </th>
                 <th> Description </th>
                 <th> Content </th>
@@ -24,22 +28,24 @@
             </tr>
         </thead>
         <tbody>
-               
+                @foreach($posts as $post)
                     <tr>
-                        <td> {{$comment->id}} </td>
-                        <td> {{$comment->comment}} </td>
-                        <td> {{$comment->post->title}} </td>
-                        <td> {{$comment->post->description}} </td>
-                        <td> {{$comment->post->content}} </td>
+                        <td> {{$post->id}} </td>
+                        <td> {{$post->title}} </td>
+                        <td> {{$post->description}} </td>
+                        <td> {{$post->content}} </td>
                        
                         <td class="d-flex flex-row justify-content-center">
-                        
-                            <form action="{{route('posts.edit', $comment->id)}}" method="GET">
+                            <form action="{{route('posts.show', $post->id)}}" method="GET">
+                                <button class='btn btn-danger ml-2'> SHOW </button>
+                            </form>
+                            
+                            <form action="{{route('posts.edit', $post->id)}}" method="GET">
                                 <button class='btn btn-success ml-2'> EDIT </button> 
                             </form>
                             
 
-                            <form action="{{route('posts.destroy', $comment->id)}}" method="POST">
+                            <form action="{{route('posts.destroy', $post->id)}}" method="POST">
                                 {{csrf_field()}}
                                 <input type='hidden' value='DELETE' name='_method'>
                                 <button type='submit' class='btn btn-warning ml-2'> DELETE </button>
@@ -47,7 +53,7 @@
                                 
                         </td>
                     </tr>
-                
+                @endforeach
           
         </tbody>
     </table>

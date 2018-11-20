@@ -13,17 +13,15 @@
 <div class="container">
     <div class="row">
             <div class="col-12">
-                <form action="{{route('posts.update', $comment->id)}}" method="POST">
+                <form action="{{route('posts.update', $post->id)}}" method="POST">
                 {{csrf_field()}}
                 <input type="hidden" name="_method" value="PUT" />
 
-                    Comment: <input type="text" id="comment" placeholder="Comment" name="comment" value="{{$comment->comment}}">
+                    Title: <input type="text" id="title" placeholder="Title" name="title" value="{{$post->title}}">
 
-                    Title: <input type="text" id="title" placeholder="Title" name="title" value="{{$comment->post->title}}">
+                    Description: <input type="text" id="description" placeholder="Description" name="description" value="{{$post->description}}">
 
-                    Description: <input type="text" id="description" placeholder="Description" name="description" value="{{$comment->post->description}}">
-
-                    Content: <input type="text" id="content" placeholder="Content" name="content" value="{{$comment->post->content}}">
+                    Content: <input type="text" id="content" placeholder="Content" name="content" value="{{$post->content}}">
 
                     <button type="submit"> SAVE
                     </button>
