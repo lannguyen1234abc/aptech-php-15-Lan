@@ -12,19 +12,24 @@
 </head>
 <body>
 
-<div class="container mt-3">
+
+<div class="text-center mb-3"> <h1> Thông tin người dùng</h1> </div>
+
+<div class="container mt-3 mb-3">
     <form action="{{route('users.create')}}">
         <button class="btn btn-danger"> Tạo mới người dùng </button>
     </form>
 </div>
 
 <div class="container">
-    <h1 class="text-center"> Users </h1>
     <table class="table table-hover table-bordered text-center">
         <thead>
             <tr>
-                <th> # </th>
+                <th> ID </th>
                 <th> Name </th>
+                <th> Number </th>
+                <th> Created_at </th>
+                <th> Updated_at </th>
                 <th> Action </th>
             </tr>
         </thead>
@@ -33,7 +38,9 @@
                     <tr>
                         <td> {{$user->id}} </td>
                         <td> {{$user->name}} </td>
-                       
+                        <td> {{$user->phone->number}} </td>
+                        <td> {{$user->created_at}} </td>
+                        <td> {{$user->updated_at}} </td>
                         <td class="d-flex flex-row justify-content-center">
                             <form action="{{route('users.show', $user->id)}}" method="GET">
                                 <button class='btn btn-danger ml-2'> SHOW </button>
@@ -50,8 +57,9 @@
                                 <button type='submit' class='btn btn-warning ml-2'> DELETE </button>
                             </form>
                                 
-                        </td>
+                    </td>
                     </tr>
+                    
                 @endforeach
           
         </tbody>

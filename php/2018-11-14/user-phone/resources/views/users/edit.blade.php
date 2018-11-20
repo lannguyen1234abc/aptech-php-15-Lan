@@ -18,6 +18,8 @@
 
                     Name: <input type="text" id="name" placeholder="Name" name="name" value="{{$user->name}}">
 
+                    Number: <input type="text" id="number" placeholder="Number" name="number" value="{{$user->number}}">
+
                     <button type="submit"> SAVE
                     </button>
                     
