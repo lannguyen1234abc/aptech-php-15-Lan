@@ -22,6 +22,7 @@
                     <div>
                         Post_id: <input type="integer" id="post_id" placeholder="Post_id" name="post_id" >
                     </div>
+                    <!--
                     <div>
                         Title: <input type="text" id="title" placeholder="Title" name="title" >
                     </div>
@@ -31,7 +32,7 @@
                     <div>
                         Content: <input type="text" id="content" placeholder="Content" name="content">
                     </div>
-                    
+                    -->
                     <div>
                         <button type="submit"> CREATE
                         </button>

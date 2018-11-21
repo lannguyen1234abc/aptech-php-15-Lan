@@ -8,6 +8,6 @@ class Comment extends Model
 {
     protected $fillable = ['comment','post_id'];
     public function post(){
-        return $this->belongsTo('App\Post','post_id');
+        return $this->belongsTo('App\Post');
     }
 }

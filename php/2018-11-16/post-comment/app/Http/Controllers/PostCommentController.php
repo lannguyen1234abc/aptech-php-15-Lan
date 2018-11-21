@@ -36,9 +36,11 @@ class PostCommentController extends Controller
      */
     public function store(Request $request)
     {
-        $comment = Comment::create(['comment' => $request ->comment, 'post_id' => $request->post_id])->post()->create(['title' => $request ->title, 'description' => $request ->description,'content' => $request ->content]);
+        /*$comment = Comment::create(['comment' => $request ->comment, 'post_id' => $request->post_id])->post()->create(['title' => $request ->title, 'description' => $request ->description,'content' => $request ->content]);*/
+        //$comments = Comment::with('post')->find($id->id);
 
-        $comments = Comment::with('post')->find($id->id);
+        $comment = Comment::create(['comment' => $request ->comment, 'post_id' => $request->post_id]);
+
         return redirect()->route('postcomment.index');
     }
 
@@ -85,8 +87,10 @@ class PostCommentController extends Controller
      */
     public function destroy(Comment $id)
     {
-        Comment::where('post_id', $id->id)->delete();
-        Post::destroy($id->id);
+        /*Comment::where('id', $comment->id)->delete();
+        Post::destroy($comment->id);*/
+
+        Comment::destroy($id->id);
         return redirect()->route('postcomment.index');
     }
 }
