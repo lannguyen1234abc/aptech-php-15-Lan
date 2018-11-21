@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
-class CommentController extends Controller
+use App\Post;
+class PostCommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-        $comments = Comment::all();
-        return view('comment.index', ['comments'=>$comments]);
-       
+        $comments = Comment::with('post')->get();
+        return view('postcomment.index', ['comments'=>$comments]);
     }
 
     /**
@@ -25,7 +25,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        return view('comment.create');
+        return view('postcomment.create');
     }
 
     /**
@@ -36,11 +36,10 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $comments = Comment::create([
-            'comment'=>$request->comment, 
-            'post_id'=>$request->post_id
-            ]);
-        return redirect()->route('comments.index');
+        $comment = Comment::create(['comment' => $request ->comment, 'post_id' => $request->post_id])->post()->create(['title' => $request ->title, 'description' => $request ->description,'content' => $request ->content]);
+
+        $comments = Comment::with('post')->find($id->id);
+        return redirect()->route('postcomment.index');
     }
 
     /**
@@ -49,10 +48,10 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comment $id)
     {
-        $comment = Comment::find($id);
-        return view('comment.show', ['comment'=>$comment]);
+        $comment = Comment::with('post')->find($id->id);
+        return view('postcomment.show', ['comment'=> $comment]);    
     }
 
     /**
@@ -63,8 +62,7 @@ class CommentController extends Controller
      */
     public function edit($id)
     {
-        $comment = Comment::with('post')->find($id);
-        return view('comment.edit', ['comment'=> $comment]);
+        //
     }
 
     /**
@@ -74,16 +72,9 @@ class CommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
-        $comment = Comment::find($id);
-        
-        $comment->update([
-            'comment'=>$request->comment, 
-            'post_id'=>$request->post_id
-        ]);
-        
-        return redirect()->route('comments.show',$id);
+        //
     }
 
     /**
@@ -94,7 +85,8 @@ class CommentController extends Controller
      */
     public function destroy(Comment $id)
     {
-        Comment::destroy($id->id);
-        return redirect()->route('comments.index');
+        Comment::where('post_id', $id->id)->delete();
+        Post::destroy($id->id);
+        return redirect()->route('postcomment.index');
     }
 }

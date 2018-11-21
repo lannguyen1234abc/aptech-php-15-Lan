@@ -24,7 +24,16 @@ Route::put('/comments/{id}', 'CommentController@update')->name('comments.update'
 Route::get('/posts', 'PostController@index')->name('posts.index');
 Route::get('/posts/create', 'PostController@create')->name('posts.create');
 Route::post('/posts', 'PostController@store')->name('posts.store');
-Route::get('/posts/{p_id}', 'PostController@show')->name('posts.show');
-Route::delete('/posts/{p_id}', 'PostController@destroy')->name('posts.destroy');
-Route::get('/posts/{p_id}/edit', 'PostController@edit')->name('posts.edit');
-Route::put('/posts/{p_id}', 'PostController@update')->name('posts.update');
+Route::get('/posts/{id}', 'PostController@show')->name('posts.show');
+Route::delete('/posts/{id}', 'PostController@destroy')->name('posts.destroy');
+Route::get('/posts/{id}/edit', 'PostController@edit')->name('posts.edit');
+Route::put('/posts/{id}', 'PostController@update')->name('posts.update');
+
+
+Route::get('/postcomment', 'PostCommentController@index')->name('postcomment.index');
+Route::get('/postcomment/create', 'PostCommentController@create')->name('postcomment.create');
+Route::post('/postcomment', 'PostCommentController@store')->name('postcomment.store');
+Route::get('/postcomment/{id}', 'PostCommentController@show')->name('postcomment.show');
+Route::delete('/postcomment/{id}', 'PostCommentController@destroy')->name('postcomment.destroy');
+Route::get('/postcomment/{id}/edit', 'PostCommentController@edit')->name('postcomment.edit');
+Route::put('/postcomment/{id}', 'PostCommentController@update')->name('postcomment.update');

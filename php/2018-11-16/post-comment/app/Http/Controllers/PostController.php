@@ -49,9 +49,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($p_id)
+    public function show($id)
     {
-        $post = Post::find($p_id);
+        $post = Post::find($id);
         return view('post.show', ['post'=> $post]);
     }
 
@@ -61,9 +61,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($p_id)
+    public function edit($id)
     {
-        $post = Post::find($p_id);
+        $post = Post::find($id);
         return view('post.edit', ['post' => $post]);
     }
 
@@ -74,9 +74,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $p_id)
+    public function update(Request $request, $id)
     {
-        $post = Post::find($p_id);
+        $post = Post::find($id);
         /*$user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
@@ -86,7 +86,7 @@ class PostController extends Controller
             'description' => $request ->description,
             'content' => $request ->content
         ]);
-        return redirect()->route('posts.show', $p_id);
+        return redirect()->route('posts.show', $id);
     }
 
     /**
@@ -95,9 +95,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($p_id)
+    public function destroy($id)
     {
-        Post::destroy($p_id);
+        Post::destroy($id);
         return redirect()->route('posts.index');
     }
 }
