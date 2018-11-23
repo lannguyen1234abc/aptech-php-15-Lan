@@ -62,9 +62,10 @@ class PostCommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comment $id)
     {
-        //
+        $comment = Comment::with('post')->find($id->id);
+        return view('postcomment.edit', ['comment'=>$comment]);
     }
 
     /**
@@ -74,9 +75,14 @@ class PostCommentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Comment $id)
     {
-        //
+        $comment = Comment::with('post')->find($id->id);
+        $comment->update([
+            'comment'=>$request->comment,
+            'post_id'=>$request->post_id
+        ]);
+        return redirect()->route('postcomment.show',$id);
     }
 
     /**

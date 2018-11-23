@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->string('comment');
             $table->unsignedInteger('post_id');
             $table->foreign('post_id')->references('id')->on('posts');
+            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
