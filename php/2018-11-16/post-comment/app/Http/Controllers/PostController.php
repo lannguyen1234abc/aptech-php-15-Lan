@@ -97,7 +97,14 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
+        $post = Post::find($id);
+        $post->comments()->delete();
+        // $post->save();
         Post::destroy($id);
+        // 1 query comment co p_id = $id
+        // Comment::where('p_id',$id)->delete();
+
+
         return redirect()->route('posts.index');
     }
 }
