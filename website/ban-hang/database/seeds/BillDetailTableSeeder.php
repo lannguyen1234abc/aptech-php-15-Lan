@@ -1,0 +1,22 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use App\BillDetail;
+
+class BillDetailTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        BillDetail::create([
+            'bill_id'->bill_id,
+            'product_id'->product_id,
+            'quantity'->quantity,
+            'price'->price
+        ]);
+    }
+}
