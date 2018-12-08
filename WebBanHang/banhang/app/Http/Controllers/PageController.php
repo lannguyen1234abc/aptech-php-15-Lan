@@ -5,13 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ProductType;
 use App\Slide;
+use App\Product;
 
 class PageController extends Controller
 {
     public function home(){
         $slides = Slide::all();
         $producttypes = ProductType::all();
-        return view('page.trangchu',['producttypes'=>$producttypes], ['slides'=>$slides]); 
+        $new_products = Product::all();
+        return view('page.trangchu',compact('slides','producttypes', 'new_products'));
+        //return view('page.trangchu',['producttypes'=>$producttypes], ['slides'=>$slides]); 
+        
         //sử dụng mảng slide trỏ tới biến truyền vào là slide;
         
         //return view('page.trangchu',compact('slides','producttypes'));

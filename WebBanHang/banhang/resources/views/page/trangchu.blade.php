@@ -50,86 +50,25 @@
           </div>
       </div>
 <div class="Product container mb-5">
-          <div class="row mb-3">
+        <div class="row mb-3">
               <div class="col-md-12">
-                  <h1 class="text-danger text-center"> Sản phẩm </h1>
+                  <h1 class="text-danger"> Sản phẩm mới </h1>
+                  <p> Tìm thấy {{count($new_products)}} sản phẩm </p>
               </div>
-          </div>
-          <div class="row mb-3">
-              <div class="col-md-12">
-                  <div class="card-deck">
-                      <div class="card">
-                          <div class="Product_Image1"></div>
-                          <div class="card-body">
-                              <h5 class="card-title"> Bánh dâu tây </h5>
-                              <p class="card-text"> $ 100.000 </p>
-                              <button class="btn btn-outline-primary"> Chi tiết </button>
-                          </div>
-                      </div>
-                      <div class="card">
-                            <div class="Product_Image2"></div>
-                            <div class="card-body">
-                                <h5 class="card-title"> Bánh dâu tây </h5>
-                                <p class="card-text"> $ 100.000 </p>
-                                <button class="btn btn-outline-primary"> Chi tiết </button>
-                            </div>
-                      </div>
-                      <div class="card">
-                            <div class="Product_Image3"></div>
-                            <div class="card-body">
-                                <h5 class="card-title"> Bánh dâu tây </h5>
-                                <p class="card-text"> $ 100.000 </p>
-                                <button class="btn btn-outline-primary"> Chi tiết </button>
-                            </div>
-                      </div>
-                      <div class="card">
-                            <div class="Product_Image4"></div>
-                            <div class="card-body">
-                                <h5 class="card-title"> Bánh dâu tây </h5>
-                                <p class="card-text"> $ 100.000 </p>
-                                <button class="btn btn-outline-primary"> Chi tiết </button>
-                            </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="row">
-                <div class="col-md-12">
-                    <div class="card-deck">
-                        <div class="card">
-                            <div class="Product_Image5"></div>
-                            <div class="card-body">
-                                <h5 class="card-title"> Bánh dâu tây </h5>
-                                <p class="card-text"> $ 100.000 </p>
-                                <button class="btn btn-outline-primary"> Chi tiết </button>
-                            </div>
-                        </div>
-                        <div class="card">
-                              <div class="Product_Image6"></div>
-                              <div class="card-body">
-                                  <h5 class="card-title"> Bánh dâu tây </h5>
-                                  <p class="card-text"> $ 100.000 </p>
-                                  <button class="btn btn-outline-primary"> Chi tiết </button>
-                              </div>
-                        </div>
-                        <div class="card">
-                              <div class="Product_Image7"></div>
-                              <div class="card-body">
-                                  <h5 class="card-title"> Bánh dâu tây </h5>
-                                  <p class="card-text"> $ 100.000 </p>
-                                  <button class="btn btn-outline-primary"> Chi tiết </button>
-                              </div>
-                        </div>
-                        <div class="card">
-                              <div class="Product_Image8"></div>
-                              <div class="card-body">
-                                  <h5 class="card-title"> Bánh dâu tây </h5>
-                                  <p class="card-text"> $ 100.000 </p>
-                                  <button class="btn btn-outline-primary"> Chi tiết </button>
-                              </div>
-                        </div>
+        </div>
+        <div class="row mb-3">
+            @foreach($new_products as $index)
+            <div class="col-md-3 mb-3">
+                <div class="card">
+                    <img class="Product_Image1" src="banhang/image/products/{{$index->image}}" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{$index->name}} </h5>
+                        <p class="card-text"> $ {{$index->price}} </p>
+                        <button class="btn btn-outline-primary"> Chi tiết </button>
                     </div>
                 </div>
             </div>
-      </div>
+            @endforeach
+        </div>
+</div>
 @endsection
