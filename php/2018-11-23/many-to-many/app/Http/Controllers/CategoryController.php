@@ -10,4 +10,6 @@ class CategoryController extends Controller
         $categories = Category::with('posts')->get();
         return view('cate.index', ['categories'=>$categories]);
     }
+    
+    
 }

@@ -1,10 +1,23 @@
+.Button_Dangki {
+  background-image: url("https://images.unsplash.com/photo-1536935779868-3ea6bd0de56e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=642&q=80");
+  height: 620px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .Menu_Height {
   height: 50px;
 }
 
+.Carousel_Left {
+  height: 600px;
+  width: 100%;
+}
+
 .Carousel_Image1 {
-  background-image: url("https://images.unsplash.com/photo-1521886655570-97530ff9454b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d0a49d902098d520d73d1bea27857329&auto=format&fit=crop&w=750&q=80");
-  height: 500px;
+  height: 600px;
   width: 100%;
   background-attachment: fixed;
   background-position: center;
@@ -12,24 +25,9 @@
   background-size: cover;
 }
 
-.Carousel_Image2 {
-  background-image: url("https://images.unsplash.com/photo-1536302446738-272630cf902e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cf98d077c2d1c74dae7cbe5d25c36b83&auto=format&fit=crop&w=750&q=80");
-  height: 500px;
+.Product_LoaiSP {
+  height: 456px;
   width: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.Carousel_Image3 {
-  background-image: url("https://images.unsplash.com/photo-1496174883999-edcc585a373f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=36bad2c6b16377657131ded4f11d235e&auto=format&fit=crop&w=750&q=80");
-  height: 500px;
-  width: 100%;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .Product_Image1 {

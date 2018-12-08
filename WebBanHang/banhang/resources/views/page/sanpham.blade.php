@@ -11,28 +11,22 @@
     <div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-9 offset-md-3">
-                <h5> Sản phẩm mới </h5>
+                <h2> Sản phẩm mới </h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        Loại sản phẩm
+                <div class="card Product_LoaiSP">
+                    <div class="card-header bg-success">
+                        <h3 class="text-white"> Loại sản phẩm </h3>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <i class="fa fa-arrow-circle-right"></i>
-                            <a href=""> Bánh ngọt </a>
-                        </li>
-                        <li class="list-group-item"> 
-                            <i class="fa fa-arrow-circle-right"></i>
-                            <a href=""> Pizza </a> 
-                        </li>
-                        <li class="list-group-item"> 
-                            <i class="fa fa-arrow-circle-right"></i> 
-                            <a href=""> Bánh kem </a>
-                        </li>
+                        @foreach($producttypes as $index)
+                            <li class="list-group-item">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <a href=""> {{$index->name}} </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -69,7 +63,7 @@
     <div class="container mb-5">
         <div class="row">
             <div class="col-md-9 offset-md-3">
-                <h5> Sản phẩm nổi bật </h5>
+                <h2> Sản phẩm nổi bật </h2>
             </div>
         </div>
         <div class="row">

@@ -23,3 +23,7 @@ Route::get('/xem', function(){
     $data = App\Post::find(1)->get()->toJson();
     return $data;
 });
+Route::get('/index','PostController@index')->name('posts.index');
+Route::get('/posts/create', 'PostController@create')->name('posts.create');
+ 
+Route::post('/posts', 'PostController@store')->name('posts.store');

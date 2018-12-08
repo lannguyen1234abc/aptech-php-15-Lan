@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/trangchu', 'PageController@home');
-Route::get('/sanpham', 'PageController@product');
-Route::get('/lienhe', 'PageController@contact');
-Route::get('/gioithieu', 'PageController@introduce');
+Route::get('/trangchu', 'PageController@home')->name('trangchu');
+Route::get('/sanpham', 'PageController@product')->name('sanpham');
+Route::get('/lienhe', 'PageController@contact')->name('lienhe');
+Route::get('/gioithieu', 'PageController@introduce')->name('gioithieu');
+Route::get('/dangki', 'PageController@dangki')->name('dangki');
+Route::get('/dangnhap', 'PageController@dangnhap')->name('dangnhap');

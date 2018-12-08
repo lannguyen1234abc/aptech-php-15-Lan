@@ -16,7 +16,9 @@ class PostsTableSeeder extends Seeder
         $faker = Faker\Factory::create();
         foreach (range(1, 10) as $index) {
             Post::create([
-                'title' => $faker->text
+                'title' => $faker->text,
+                'description' => $faker->address,
+                'content' => $faker->text
             ]);
         }
     }
