@@ -57,8 +57,11 @@
                     </div>
                 </div>
                 <div class="col-md-6 d-flex flex-row align-items-center justify-content-center">
-                          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+                    <form action="{{route('search')}}" method="GET" class="d-flex flex-row">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+                    </form>
+                    
                 </div>
             </div>
         </div>

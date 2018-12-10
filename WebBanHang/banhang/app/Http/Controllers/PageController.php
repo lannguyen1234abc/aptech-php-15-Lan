@@ -44,5 +44,10 @@ class PageController extends Controller
     public function dangnhap(){
         return view('page.dangnhap');
     }
+    public function search(Request $re){
+        $product = Product::where('name', 'like', '%'.$re->search.'%')
+                            ->orwhere('price', $re->search)->get();
+        return view('page.search', compact('product'));
+    }
     
 }

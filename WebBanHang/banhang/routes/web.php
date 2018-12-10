@@ -18,3 +18,4 @@ Route::get('/lienhe', 'PageController@contact')->name('lienhe');
 Route::get('/gioithieu', 'PageController@introduce')->name('gioithieu');
 Route::get('/dangki', 'PageController@dangki')->name('dangki');
 Route::get('/dangnhap', 'PageController@dangnhap')->name('dangnhap');
+Route::get('/search', 'PageController@search')->name('search');
