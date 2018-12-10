@@ -13,6 +13,7 @@
 
 Route::get('/trangchu', 'PageController@home')->name('trangchu');
 Route::get('/sanpham', 'PageController@product')->name('sanpham');
+Route::get('/loaisanpham/{type}', 'PageController@producttype')->name('loaisanpham');
 Route::get('/lienhe', 'PageController@contact')->name('lienhe');
 Route::get('/gioithieu', 'PageController@introduce')->name('gioithieu');
 Route::get('/dangki', 'PageController@dangki')->name('dangki');

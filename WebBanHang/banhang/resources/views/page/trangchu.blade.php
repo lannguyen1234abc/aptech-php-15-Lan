@@ -9,12 +9,14 @@
                             <h3 class="text-white"> Loại sản phẩm </h3>
                         </div>
                         <ul class="list-group list-group-flush">
-                            @foreach($producttypes as $index)
+
+                            @foreach($type_home as $t_h)
                             <li class="list-group-item">
                                 <i class="fa fa-arrow-circle-right"></i>
-                                <a href=""> {{$index->name}} </a>
+                                <a href="{{route('loaisanpham',$t_h->id)}}"> {{$t_h->name}} </a>
                             </li>
                             @endforeach
+
                         </ul>
                     </div>
                 </div>
@@ -53,17 +55,27 @@
         <div class="row mb-3">
               <div class="col-md-12">
                   <h1 class="text-danger"> Sản phẩm mới </h1>
-                  <p> Tìm thấy {{count($new_products)}} sản phẩm </p>
+                  <h5> Tìm thấy {{count($new_products)}} sản phẩm </h5>
               </div>
         </div>
         <div class="row mb-3">
             @foreach($new_products as $index)
             <div class="col-md-3 mb-3">
-                <div class="card">
+                <div class="card w-100">
                     <img class="Product_Image1" src="banhang/image/products/{{$index->image}}" alt="">
                     <div class="card-body">
                         <h5 class="card-title"> {{$index->name}} </h5>
-                        <p class="card-text"> $ {{$index->price}} </p>
+                        <div class="d-flex flex-row">
+
+                            @if($index->promotion_price == 0)
+                                <span class="card-text pr-3">${{$index->price}}</span>
+                            @else
+                                <span class="card-text pr-3"> ${{$index->price}}</span>
+                                <span class="card-text"> <b class="text-danger"> Sale: </b>${{$index->promotion_price}}
+                                </span>
+                            @endif
+
+                        </div>
                         <button class="btn btn-outline-primary"> Chi tiết </button>
                     </div>
                 </div>

@@ -6,6 +6,17 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <base href="{{asset('')}}"> 
+    <link rel="stylesheet" href="{{asset('banhang/asset/style.css')}}">
+   
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <style>
+        li.nav-item:hover{
+            background-color: gray;
+        }
+    </style>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -25,10 +36,10 @@
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-outline-primary mr-3"> 
+                    <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangki')}}"> Đăng kí </a> 
                     </button>
-                    <button class="btn btn-outline-primary mr-3"> 
+                    <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangnhap')}}"> Đăng nhập </a>
                     </button>
                     <button class="btn btn-outline-success" type="submit"> <i class="fas fa-shopping-cart"></i>
@@ -56,7 +67,7 @@
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav w-100 h-100 d-flex justify-content-around ">
+                            <ul class="navbar-nav navbar-hover w-100 h-100 d-flex justify-content-around ">
                                 <li class="nav-item">
                                     <a class="nav-link " href="{{route('trangchu')}}"> <h4 class="text-white "> Trang chủ </h4>
                                     </a>
