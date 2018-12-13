@@ -15,16 +15,18 @@
 }
 .Carousel{
     &_Left{
-    
+        &_Size{
             height: 600px;
             width: 100%;
-        
+        }
+        &_Title{
+            border-radius: 15px !important;
+        }
     }
     &_Image1{
-        
+            border-radius: 15px;
             height: 600px;
             width: 100%;
-            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -32,10 +34,11 @@
     
 }
 .Product{
-    &_LoaiSP{
-        height: 456px;
-        width: 100%;
-    
+    &_Style{
+        border-radius: 20px !important;
+        text-transform: uppercase;
+        color: white;
+        font-size: 20px;
     }
     &_Image1{
             height: 300px;

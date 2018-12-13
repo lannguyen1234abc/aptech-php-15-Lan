@@ -4,9 +4,9 @@
 <div class="Slide container mb-5">
           <div class="row">
                 <div class="col-md-3 ">
-                    <div class="card Carousel_Left">
-                        <div class="card-header bg-success ">
-                            <h3 class="text-white"> Loại sản phẩm </h3>
+                    <div class="card Carousel_Left_Size Carousel_Left_Title">
+                        <div class="card-header bg-info Carousel_Left_Title">
+                            <h3 class="text-white text-capitalize"> Loại sản phẩm </h3>
                         </div>
                         <ul class="list-group list-group-flush">
 
@@ -33,8 +33,8 @@
                             <div class="carousel-inner" role="listbox">
                                 @foreach( $slides as $sl )
                                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                                        <img class="Carousel_Image1" src="{{ $sl->link }}" alt="">
-                                        
+                                        <div class="Carousel_Image1" alt="" style="background-image : url({{$sl->link}})">
+                                        </div>
                                     </div>
                                 @endforeach
                             </div>
@@ -52,17 +52,24 @@
           </div>
       </div>
 <div class="Product container mb-5">
-        <div class="row mb-3">
-              <div class="col-md-12">
-                  <h1 class="text-danger"> Sản phẩm mới </h1>
-                  <h5> Tìm thấy {{count($new_products)}} sản phẩm </h5>
-              </div>
+        <div class="row mb-5 d=flex justify-content-center">
+            <div class="card-header Product_Style text-center bg-info">
+                Sản phẩm mới 
+            </div> 
         </div>
+        
         <div class="row mb-3">
+
             @foreach($new_products as $index)
             <div class="col-md-3 mb-3">
-                <div class="card w-100">
-                    <img class="Product_Image1" src="banhang/image/products/{{$index->image}}" alt="">
+                <div class="card ">
+                    <div class="Product_Image1" alt="" style="background-image: url(banhang/image/products/{{$index->image}})">
+                        @if($index->promotion_price != 0)
+                        <div class="bg-warning" style="width:50px; height:30px;">
+                        <h4 class="text-center text-white"> Sale <h4>
+                        </div>
+                        @endif
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title"> {{$index->name}} </h5>
                         <div class="d-flex flex-row">
@@ -81,6 +88,8 @@
                 </div>
             </div>
             @endforeach
+
         </div>
+        
 </div>
 @endsection

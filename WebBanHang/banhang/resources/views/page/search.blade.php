@@ -1,18 +1,18 @@
 @extends('layout.master')
 
 @section('content')
-<div class="Product container mb-5">
-        <div class="row mb-3">
+<div class="Product container mt-5">
+        <div class="row mb-5">
               <div class="col-md-12">
-                  <h1 class="text-danger"> Sản phẩm</h1>
                   <h5> Tìm thấy {{count($product)}} sản phẩm </h5>
               </div>
         </div>
-        <div class="row mb-3">
+        <div class="row mb-5">
             @foreach($product as $index)
             <div class="col-md-3 mb-3">
                 <div class="card w-100">
-                    <img class="Product_Image1" src="banhang/image/products/{{$index->image}}" alt="">
+                    <div class="Product_Image1" alt="" style="background-image: url(banhang/image/products/{{$index->image}})">
+                    </div>
                     <div class="card-body">
                         <h5 class="card-title"> {{$index->name}} </h5>
                         <div class="d-flex flex-row">

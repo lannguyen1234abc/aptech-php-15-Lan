@@ -13,6 +13,7 @@ class PageController extends Controller
         $slides = Slide::all();
         $type_home = ProductType::all(); //loại sản phẩm
         $new_products = Product::all();
+        
         return view('page.trangchu',compact('slides','type_home', 'new_products'));
 
         //return view('page.trangchu',['producttypes'=>$producttypes], ['slides'=>$slides]); 
@@ -22,14 +23,14 @@ class PageController extends Controller
     
     public function product(){
         $type_product = ProductType::all();
-        $products = Product::all();
-
+        $products = Product::paginate(6);
+        
         return view('page.sanpham', compact('type_product', 'products'));
     }
     public function producttype($type){
         $types = ProductType::all(); //loại sản phẩm
 
-        $product_type = Product::where('producttype_id', $type)->get();
+        $product_type = Product::where('producttype_id', $type)->paginate(6);
         return view('page.loaisanpham', compact('types','product_type'));
     }
     public function introduce(){

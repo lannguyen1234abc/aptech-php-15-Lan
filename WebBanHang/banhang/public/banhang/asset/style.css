@@ -11,23 +11,29 @@
   height: 70px;
 }
 
-.Carousel_Left {
+.Carousel_Left_Size {
   height: 600px;
   width: 100%;
 }
 
+.Carousel_Left_Title {
+  border-radius: 15px !important;
+}
+
 .Carousel_Image1 {
+  border-radius: 15px;
   height: 600px;
   width: 100%;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.Product_LoaiSP {
-  height: 456px;
-  width: 100%;
+.Product_Style {
+  border-radius: 20px !important;
+  text-transform: uppercase;
+  color: white;
+  font-size: 20px;
 }
 
 .Product_Image1 {

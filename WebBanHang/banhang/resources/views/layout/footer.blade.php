@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-        <div class="Footer container border-top">
-                <div class="row">
-                      <div class="col-md-12">
+        <div class="Footer container-fluid bg-success border-top">
+                <div class="row mt-3 mb-3 text-white">
+                      <div class="col-md-5 offset-md-2 d-flex flex-column">
                           <h4> Liên hệ: </h4>
                               <div>   
                                   <p> <i class="fab fa-facebook"></i> Facebook: lucky cake</p>
@@ -28,6 +28,13 @@
                               <div>   
                                   <p> <i class="fas fa-home"></i> Address: 459 Tôn Đức Thắng, Liên Chiểu </p>
                               </div>
+                      </div>
+                      <div class="col-md-5">
+                        <h4> Thông tin </h4>
+                        <ul>
+                            <li> <a href="" class="text-white"> Giới thiệu </a> </li>
+                            <li> <a href="" class="text-white"> Liên hệ </a> </li>
+                        </ul>
                       </div>
                 </div>
             </div>

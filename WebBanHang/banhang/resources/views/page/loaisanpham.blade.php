@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="card Product_LoaiSP">
-                    <div class="card-header bg-success">
-                        <h3 class="text-white"> Loại sản phẩm </h3>
+                    <div class="card-header bg-info">
+                        <h3 class="text-white text-capitalize"> Loại sản phẩm </h3>
                     </div>
                     <ul class="list-group list-group-flush">
 
@@ -32,7 +32,13 @@
                 @foreach($product_type as $sp_type)
                 <div class="col-md-4 mb-3">
                     <div class="card">
-                        <img class="Product_Image1" src="banhang/image/products/{{$sp_type->image}}" alt="">
+                        <div class="Product_Image1" alt="" style="background-image: url(banhang/image/products/{{$sp_type->image}})">
+                            @if($sp_type->promotion_price != 0)
+                            <div class="bg-warning" style="width:50px; height:30px;">
+                            <h4 class="text-center text-white"> Sale <h4>
+                            </div>
+                            @endif
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title"> {{$sp_type->name}} </h5>
                             <div class="d-flex flex-row">
@@ -51,7 +57,12 @@
                     </div>
                 </div>
                 @endforeach
+                </div>
 
+                <div class="row mt-5">
+                    <div class="col-md-12 d-flex justify-content-center display-5">
+                        {{$product_type->links("pagination::bootstrap-4")}}
+                    </div>
                 </div>
             </div>
         </div>

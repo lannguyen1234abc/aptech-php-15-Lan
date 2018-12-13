@@ -4,7 +4,7 @@
 <div class="container mb-5">
         <div class="row">
             <div class="col-md-12 ">
-                <h1 class="text-danger text-center"> Giới thiệu </h1>
+                <h1 class="text-info text-center text-capitalize"> Giới thiệu </h1>
             </div>
         </div>
     </div>

@@ -24,10 +24,10 @@
 </head>
 
 <body>
-    <div class="Header container-fluid mt-3 border-bottom">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="d-flex justify-content-center align-items-center">
+    <div class="Header container-fluid border-bottom">
+        <div class="row mt-3 mb-3 ">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div>
                     <b> <i class="fas fa-home"></i> </b>
                     <b class="pr-5"> 459 Tôn Đức Thắng, Liên Chiểu </b>
                     <b> <i class="fas fa-phone"></i> </b>
@@ -36,47 +36,49 @@
             </div>
             <div class="col-md-6">
                 <div class="d-flex justify-content-center">
+                    <form action="{{route('search')}}" method="GET" class="d-flex flex-row mr-3">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Search" name="search" aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-info my-2 my-sm-0" type="submit"> <i class="fas fa-search"></i> </button>
+                            </div>
+                        </div>
+
+                    </form>
                     <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangki')}}"> Đăng kí </a> 
                     </button>
                     <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangnhap')}}"> Đăng nhập </a>
                     </button>
-                    <button class="btn btn-outline-success" type="submit"> <i class="fas fa-shopping-cart"></i>
+                    <button class="btn btn-outline-info" type="submit"> <i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="Logo container mb-5">
+    <div class="Logo container mb-3 mt-3">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="d-flex flex-row align-items-center text-success">
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center text-danger">
                           <i class="far fa-hand-peace display-3 mr-3"></i>
                           <h4> <font face="Comic sans MS" size="10"> Lucky Cake </font> </h4>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex flex-row align-items-center justify-content-center">
-                    <form action="{{route('search')}}" method="GET" class="d-flex flex-row">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
-                    </form>
-                    
-                </div>
             </div>
         </div>
-        <div class="Menu container-fluid bg-info mb-5 Menu_Height">
+    <div class="Menu container-fluid bg-info mb-5 Menu_Height">
             <div class="row h-100">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav navbar-hover w-100 h-100 d-flex justify-content-around ">
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{route('trangchu')}}"> <h4 class="text-white "> Trang chủ </h4>
+                                    <a class="nav-link " href="{{route('trangchu')}}"> <h4 class="text-white text-capitalize"> Trang chủ </h4>
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="{{route('sanpham')}}"> <h4 class="text-white "> Sản phẩm </h4> 
+                                    <a class="nav-link" href="{{route('sanpham')}}"> <h4 class="text-white text-capitalize"> Sản phẩm </h4> 
                                     </a>
                                     <!--
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -87,10 +89,10 @@
                                     </div> -->
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('gioithieu')}}"> <h4 class="text-white "> Giới thiệu </h4> </a>
+                                    <a class="nav-link" href="{{route('gioithieu')}}"> <h4 class="text-white text-capitalize"> Giới thiệu </h4> </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="{{route('lienhe')}}"> <h4 class="text-white "> Liên hệ </h4> </a>
+                                    <a class="nav-link " href="{{route('lienhe')}}"> <h4 class="text-white text-capitalize"> Liên hệ </h4> </a>
                                 </li>
                             </ul>
                         </div>
@@ -111,3 +113,4 @@
 </body>
 
 </html>
+
