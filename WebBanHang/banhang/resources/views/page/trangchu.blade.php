@@ -83,7 +83,9 @@
                             @endif
 
                         </div>
-                        <button class="btn btn-outline-primary"> Chi tiết </button>
+                        <button class="btn btn-outline-primary"> 
+                            <a href="{{route('chitietsanpham',$index->id)}}"> Chi tiết </a> 
+                        </button>
                     </div>
                 </div>
             </div>

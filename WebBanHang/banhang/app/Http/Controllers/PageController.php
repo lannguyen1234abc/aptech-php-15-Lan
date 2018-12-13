@@ -50,5 +50,11 @@ class PageController extends Controller
                             ->orwhere('price', $re->search)->get();
         return view('page.search', compact('product'));
     }
+
+    public function chitiet(Request $re){
+        $product = Product::where('id', $re->id)->first();
+        
+        return view('page.chitietsanpham', compact('product'));
+    }
     
 }

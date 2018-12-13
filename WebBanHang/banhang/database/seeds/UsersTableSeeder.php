@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
         User::create([
             'name'->name,
             'email'->email,
+            'phone_number'->phone_number,
             'password'->password,
             'remember_token'->remember_token
         ]);

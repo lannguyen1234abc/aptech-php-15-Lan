@@ -11,12 +11,14 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         Product::create([
-            'producttype_id'->producttype_id,
             'name'->name,
+            'producttype_id'->producttype_id,
             'description'->description,
             'price'->price,
             'promotion_price'->promotion_price,
-            'image'->image
+            'image'->image,
+            'unit'->unit,
+            'new'->new
         ]);
     }
 }

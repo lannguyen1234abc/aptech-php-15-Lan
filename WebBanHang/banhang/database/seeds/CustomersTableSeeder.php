@@ -12,9 +12,9 @@ class CustomersTableSeeder extends Seeder
     {
         Customer::create([
             'name'->name,
-            'email'->email,
             'address'->address,
             'phone_number'->phone_number
         ]);
+
     }
 }

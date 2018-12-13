@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProducttypesTable extends Migration
+class AddUserToBillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateProducttypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('producttypes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('description');
-            $table->timestamps();
+        Schema::table('bills', function (Blueprint $table) {
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -28,6 +26,8 @@ class CreateProducttypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('producttypes');
+        Schema::table('bills', function (Blueprint $table) {
+            //
+        });
     }
 }

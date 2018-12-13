@@ -18,7 +18,7 @@ class CreateBillsTable extends Migration
             $table->unsignedInteger('customer_id');
             $table->foreign('customer_id')->references('id')->on('customers');
             $table->date('date_order');
-            $table->double('total', 8, 2);
+            $table->string('total');
             $table->timestamps();
         });
     }

@@ -12,8 +12,7 @@ class ProductTypesTableSeeder extends Seeder
     {
         ProductType::create([
             'name'->name,
-            'description'->description,
-            'image'->image
+            'description'->description
         ]);
     }
 }
