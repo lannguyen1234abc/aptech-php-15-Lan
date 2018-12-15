@@ -24,8 +24,13 @@ Route::get('/dangnhap', 'PageController@dangnhap')->name('dangnhap');
 Route::get('/search', 'PageController@search')->name('search');
 Route::get('/chitietsanpham/{id}', 'PageController@chitiet')->name('chitietsanpham');
 
-Route::get('/chitietsanpham', function(){
+/*Route::get('/chitietsanpham', function(){
     return view("page.chitietsanpham");
+});*/
+
+///Admin
+Route::get('/home', function(){
+    return view("admin.home");
 });
 
 ///Loại sản phẩm

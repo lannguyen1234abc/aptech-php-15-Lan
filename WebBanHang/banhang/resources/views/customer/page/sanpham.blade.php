@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('customer.layout.master')
 
 @section('content')
     <div class="container mt-5 mb-5">
@@ -43,10 +43,10 @@
                             <div class="d-flex flex-row">
 
                                 @if( $index->promotion_price == 0 )
-                                    <span class="card-text pr-3">${{$index->price}}</span>
+                                    <span class="card-text pr-3">${{number_format($index->price)}}</span>
                                 @else
-                                    <span class="card-text pr-3">${{$index->price}}</span>
-                                    <span class="card-text"> <b class="text-danger"> Sale: </b> ${{$index->promotion_price}}
+                                    <span class="card-text pr-3">${{number_format($index->price)}}</span>
+                                    <span class="card-text"> <b class="text-danger"> Sale: </b> ${{number_format($index->promotion_price)}}
                                     </span>
                                 @endif
 

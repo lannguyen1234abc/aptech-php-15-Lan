@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('customer.layout.master')
 
 @section('content')
   <div class="container Button_Dangki mb-5">

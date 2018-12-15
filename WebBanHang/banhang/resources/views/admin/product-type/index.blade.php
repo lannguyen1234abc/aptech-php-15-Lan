@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title> 
-
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-<body>
+@extends('admin.home')
+@section('content-right')   
 <div class="container">
-        <div class="row mt-3 mb-3">
-            <div class="col-12 d-flex justify-content-between">
-                <form action="{{route('producttype.create')}}">
-                    <button class="btn btn-outline-danger"> CREATE </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-<div class="container">
-    
+    <h1 class="text-center"> Product Type </h1>
     <table class="table table-hover table-bordered text-center">
         <thead>
             <tr>
@@ -65,8 +46,4 @@
     </table>
 </div>
 
-
-
-
-</body>
-</html>
+@endsection

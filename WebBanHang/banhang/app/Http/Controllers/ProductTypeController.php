@@ -15,7 +15,7 @@ class ProductTypeController extends Controller
     public function index()
     {
         $types = ProductType::all();
-        return view('product-type.index', ['types'=> $types]);
+        return view('admin.product-type.index', ['types'=> $types]);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProductTypeController extends Controller
      */
     public function create()
     {
-        return view('product-type.create');
+        return view('admin.product-type.create');
     }
 
     /**
@@ -38,8 +38,7 @@ class ProductTypeController extends Controller
     {
         ProductType::create([
             'name' => $request ->name,
-            'description' => $request ->description,
-            'image' => $request ->image
+            'description' => $request ->description
         ]);
         return redirect()->route('producttype.index');
     }
@@ -53,7 +52,7 @@ class ProductTypeController extends Controller
     public function show($id)
     {
         $type = ProductType::find($id);
-        return view('product-type.show', ['type'=> $type]);
+        return view('admin.product-type.show', ['type'=> $type]);
     }
 
     /**
@@ -65,7 +64,7 @@ class ProductTypeController extends Controller
     public function edit($id)
     {
         $type = ProductType::find($id);
-        return view('product-type.edit', ['type' => $type]);
+        return view('admin.product-type.edit', ['type' => $type]);
     }
 
     /**
@@ -77,7 +76,13 @@ class ProductTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producttype = ProductType::find($id);
+        
+        $producttype -> update([
+            'name' => $request ->name,
+            'description' => $request ->description
+        ]);
+        return redirect()->route('producttype.show', $id);
     }
 
     /**
@@ -88,6 +93,12 @@ class ProductTypeController extends Controller
      */
     public function destroy($id)
     {
+        /*ProductType::destroy($id);
+        return redirect()->route('producttype.index');*/
+
+        $product_type = ProductType::find($id);
+        $product_type->products()->delete();
+        // $post->save();
         ProductType::destroy($id);
         return redirect()->route('producttype.index');
     }

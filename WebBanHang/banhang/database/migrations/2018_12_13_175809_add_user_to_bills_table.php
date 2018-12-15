@@ -14,8 +14,8 @@ class AddUserToBillsTable extends Migration
     public function up()
     {
         Schema::table('bills', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('users');
         });
     }
 

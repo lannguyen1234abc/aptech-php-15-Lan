@@ -1,22 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title> 
+@extends('admin.home')
 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
-<body>
-<div class="container">
+@section('content-right')
     
+<div class="container">
+<h1 class="text-center"> Products </h1>
     <table class="table table-hover table-bordered text-center">
         <thead>
             <tr>
                 <th> # </th>
                 <th> Name </th>
-                <th> Type_id </th>
+                <th> Producttype_id </th>
                 <th> Price </th>
                 <th> Promotion_price </th>
                 <th> Image </th>
@@ -26,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-               
+                @foreach($products as $product)
                     <tr>
                         <td> {{$product->id}} </td>
                         <td> {{$product->name}} </td>
@@ -36,7 +29,12 @@
                         <td> {{$product->image}} </td>
                         <td> {{$product->unit}} </td>
                         <td> {{$product->new}} </td>
+                        
+                        
                         <td class="d-flex flex-row justify-content-center">
+                            <form action="{{route('products.show', $product->id)}}" method="GET">
+                                <button class='btn btn-danger ml-2'> SHOW </button>
+                            </form>
                             
                             <form action="{{route('products.edit', $product->id)}}" method="GET">
                                 <button class='btn btn-success ml-2'> EDIT </button> 
@@ -49,13 +47,11 @@
                                 <button type='submit' class='btn btn-warning ml-2'> DELETE </button>
                             </form>
                                 
-                        </td>
+                        </td> 
                     </tr>
-               
+                @endforeach
           
         </tbody>
     </table>
 </div>
-
-</body>
-</html>
+@endsection

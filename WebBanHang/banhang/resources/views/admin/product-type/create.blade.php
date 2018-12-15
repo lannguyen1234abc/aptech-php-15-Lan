@@ -22,9 +22,7 @@
                     <div>
                         Description: <input type="text" id="description" placeholder="Description" name="description">
                     </div>
-                    <div>
-                        Image: <input type="text" id="image" placeholder="Image" name="image">
-                    </div>
+                    
                     <div>
                         <button type="submit"> CREATE
                     </button>

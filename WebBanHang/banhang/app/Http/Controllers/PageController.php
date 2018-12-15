@@ -14,7 +14,7 @@ class PageController extends Controller
         $type_home = ProductType::all(); //loại sản phẩm
         $new_products = Product::all();
         
-        return view('page.trangchu',compact('slides','type_home', 'new_products'));
+        return view('customer.page.trangchu',compact('slides','type_home', 'new_products'));
 
         //return view('page.trangchu',['producttypes'=>$producttypes], ['slides'=>$slides]); 
         
@@ -25,36 +25,36 @@ class PageController extends Controller
         $type_product = ProductType::all();
         $products = Product::paginate(6);
         
-        return view('page.sanpham', compact('type_product', 'products'));
+        return view('customer.page.sanpham', compact('type_product', 'products'));
     }
     public function producttype($type){
         $types = ProductType::all(); //loại sản phẩm
 
         $product_type = Product::where('producttype_id', $type)->paginate(6);
-        return view('page.loaisanpham', compact('types','product_type'));
+        return view('customer.page.loaisanpham', compact('types','product_type'));
     }
     public function introduce(){
-        return view('page.gioithieu');
+        return view('customer.page.gioithieu');
     }
     public function contact(){
-        return view('page.lienhe');
+        return view('customer.page.lienhe');
     }
     public function dangki(){
-        return view('page.dangki');
+        return view('customer.page.dangki');
     }
     public function dangnhap(){
-        return view('page.dangnhap');
+        return view('customer.page.dangnhap');
     }
     public function search(Request $re){
         $product = Product::where('name', 'like', '%'.$re->search.'%')
                             ->orwhere('price', $re->search)->get();
-        return view('page.search', compact('product'));
+        return view('customer.page.search', compact('product'));
     }
 
     public function chitiet(Request $re){
         $product = Product::where('id', $re->id)->first();
         
-        return view('page.chitietsanpham', compact('product'));
+        return view('customer.page.chitietsanpham', compact('product'));
     }
     
 }

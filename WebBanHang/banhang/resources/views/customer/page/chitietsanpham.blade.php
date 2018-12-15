@@ -1,15 +1,19 @@
-@extends('layout.master')
+@extends('customer.layout.master')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex flex-row ">
-                    <a href="{{route('trangchu')}}" class="text-secondary"> <h4><i class="fas fa-home"></i> </h4> </a> 
-                    <h4> / </h4> 
-                    <a href="{{route('sanpham')}}" class="text-secondary"> <h4> Sản phẩm </h4> </a>
-                    <h4> / </h4>
-                    <a href="" class="text-secondary"> <h4> {{$product->name}} </h4> </a>
+                    <a href="{{route('trangchu')}}" class="text-dark"> <p class="pr-2"><i class="fas fa-home"></i> </p> </a> 
+
+                    <p class="pr-2"> <i class="fas fa-chevron-right"></i> </p> 
+
+                    <a href="{{route('sanpham')}}" class="text-dark"> <p class="pr-2"> Sản phẩm </p> </a>
+
+                    <p class="pr-2"> <i class="fas fa-chevron-right"></i> </p>
+
+                    <a href="" class="text-dark"> <p > {{$product->name}} </p> </a>
                 </div>
             </div>
         </div>
@@ -30,10 +34,10 @@
                 <div class="mb-3"> <h4> {{$product->name}}</h4></div>
                 <div class="d-flex flex-row">
                     @if( $product->promotion_price == 0 )
-                        <span class="card-text pr-3"> <b class="text-danger"> Giá: </b> ${{$product->price}}</span>
+                        <span class="card-text pr-3"> <b class="text-danger"> Giá: </b> ${{number_format($product->price)}}</span>
                     @else
-                        <span class="card-text pr-3"> <b class="text-danger"> Giá: </b> ${{$product->price}}</span>
-                        <span class="card-text"> <b class="text-danger"> Sale: </b> ${{$product->promotion_price}}
+                        <span class="card-text pr-3"> <b class="text-danger"> Giá: </b> ${{number_format($product->price)}}</span>
+                        <span class="card-text"> <b class="text-danger"> Sale: </b> ${{number_format($product->promotion_price)}}
                         </span>
                     @endif
 
