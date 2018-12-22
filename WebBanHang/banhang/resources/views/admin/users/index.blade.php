@@ -1,10 +1,9 @@
-@extends('admin.home')
-@section('content-right')
+@extends('admin.master')
+@section('content2')
 
-
-<div class="container">
+<div class="container-fluid Admin_Size_content">
     <h1 class="text-center"> Users </h1>
-    <table class="table table-hover table-bordered text-center">
+    <table class="table table-hover table-bordered text-center ">
         <thead>
             <tr>
                 <th> # </th>
@@ -12,7 +11,7 @@
                 <th> Email </th>
                 <th> Phone_number </th>
                 <th> Password </th>
-                <th> Remember_token </th>
+               
                 <th> Action </th>
             </tr>
         </thead>
@@ -24,12 +23,10 @@
                         <td> {{$user->email}} </td>
                         <td> {{$user->phone_number}} </td>
                         <td> {{$user->password}} </td>
-                        <td> {{$user->remember_token}} </td>
+                        
+                        
                         
                         <td class="d-flex flex-row justify-content-center">
-                            <form action="{{route('users.show', $user->id)}}" method="GET">
-                                <button class='btn btn-danger ml-2'> SHOW </button>
-                            </form>
                             
                             <form action="{{route('users.edit', $user->id)}}" method="GET">
                                 <button class='btn btn-success ml-2'> EDIT </button> 
@@ -48,6 +45,10 @@
           
         </tbody>
     </table>
+    <div class="row mt-5">
+                    <div class="col-md-12 d-flex justify-content-center display-5">
+                        {{$users->links("pagination::bootstrap-4")}}
+                    </div>
+                </div>
 </div>
-
 @endsection

@@ -1,6 +1,6 @@
-@extends('admin.home')
-@section('content-right')   
-<div class="container">
+@extends('admin.master')
+@section('content2')   
+<div class="container-fluid Admin_Size_content">
     <h1 class="text-center"> Product Type </h1>
     <table class="table table-hover table-bordered text-center">
         <thead>
@@ -44,6 +44,11 @@
           
         </tbody>
     </table>
+    <div class="row mt-5">
+                    <div class="col-md-12 d-flex justify-content-center display-5">
+                        {{$types->links("pagination::bootstrap-4")}}
+                    </div>
+                </div>
 </div>
 
 @endsection

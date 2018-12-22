@@ -24,14 +24,17 @@ Route::get('/dangnhap', 'PageController@dangnhap')->name('dangnhap');
 Route::get('/search', 'PageController@search')->name('search');
 Route::get('/chitietsanpham/{id}', 'PageController@chitiet')->name('chitietsanpham');
 
+Route::post('/postDangki', 'PageController@postSign')->name('postDangki');
+
 /*Route::get('/chitietsanpham', function(){
     return view("page.chitietsanpham");
 });*/
 
 ///Admin
-Route::get('/home', function(){
+/*Route::get('/home', function(){
     return view("admin.home");
-});
+});*/
+Route::get('/home', 'PageController@gethome')->name('home');
 
 ///Loại sản phẩm
 Route::get('/producttype', 'ProductTypeController@index')->name('producttype.index');

@@ -61,6 +61,7 @@
         <div class="row mb-3">
 
             @foreach($new_products as $index)
+            @if($index->new == 1)
             <div class="col-md-3 mb-3">
                 <div class="card ">
                     <div class="Product_Image1" alt="" style="background-image: url(banhang/image/products/{{$index->image}})">
@@ -77,8 +78,8 @@
                             @if($index->promotion_price == 0)
                                 <span class="card-text pr-3">${{ number_format($index->price)}}</span>
                             @else
-                                <span class="card-text pr-3"> ${{number_format($index->price)}}</span>
-                                <span class="card-text"> <b class="text-danger"> Sale: </b>${{number_format($index->promotion_price)}}
+                                <span class="card-text pr-3"> <del>${{number_format($index->price)}} </del> </span>
+                                <span class="card-text"> ${{number_format($index->promotion_price)}}
                                 </span>
                             @endif
 
@@ -89,6 +90,7 @@
                     </div>
                 </div>
             </div>
+            @endif
             @endforeach
 
         </div>

@@ -49,7 +49,7 @@
                 </div>
                 
         </div>
-        <div class="col-md-10 ">
+        <div class="col-md-10">
             @yield('content-right')
         </div>
     </div>

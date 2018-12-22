@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\ProductType;
 use App\Slide;
 use App\Product;
+use App\User;
+use Hash;
 
 class PageController extends Controller
 {
@@ -55,6 +57,39 @@ class PageController extends Controller
         $product = Product::where('id', $re->id)->first();
         
         return view('customer.page.chitietsanpham', compact('product'));
+    }
+
+    public function gethome(){
+        return view('admin.home');
+    }
+    public function postSign(Request $rq){
+        $this->validate($rq,
+            [
+                'name'=>'required',
+                'email'=>'required|email|unique:users,email',
+                'phone_number'=>'required',
+                'address'=>'required',
+                'password'=>'required|min:5|max:20',
+                're_password'=>'required|same:password'
+            ],
+            [
+                'email.required'=>'Vui lòng nhập email',
+                'email.email'=>'Email không đúng định dạng',
+                'email.unique'=>'Email này đã có người sử dụng',
+                'password.required'=>'Vui lòng nhập password',
+                'password.min'=>'Password ít nhất 5 kí tự',
+                'password.max'=>'Password tối đa 20 kí tự',
+                're_password.same'=>'Password không giống nhau'
+            ]
+            );
+            $user = new User();
+            $user->name = $rq->name;
+            $user->email = $rq->email;
+            $user->phone_number = $rq->phone_number;
+            $user->address = $rq->address;
+            $user->password = Hash::make('$rq->password');
+            $user->save();
+            return redirect()->back()->with('thanhcong', 'Tạo tài khoản thành công');
     }
     
 }

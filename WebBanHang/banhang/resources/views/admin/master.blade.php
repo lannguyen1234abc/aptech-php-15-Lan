@@ -20,6 +20,7 @@
       @include('admin.header')
 
       @yield('content')
+      @yield('content2')
       
       @include('admin.footer')
     <!-- Optional JavaScript -->
