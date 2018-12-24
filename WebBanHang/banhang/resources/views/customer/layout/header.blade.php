@@ -45,12 +45,19 @@
                         </div>
 
                     </form>
+                    @if(Auth::check())
+                    <button class="btn btn-outline-info mr-3"> 
+                        <a href="{{route('dangxuat')}}"> Đăng xuất </a> 
+                    </button>
+                    @else
                     <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangki')}}"> Đăng kí </a> 
                     </button>
                     <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangnhap')}}"> Đăng nhập </a>
                     </button>
+                    @endif
+
                     <button class="btn btn-outline-info" type="submit"> <i class="fas fa-shopping-cart"></i>
                     </button>
                 </div>

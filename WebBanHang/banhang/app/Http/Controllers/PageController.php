@@ -7,7 +7,8 @@ use App\ProductType;
 use App\Slide;
 use App\Product;
 use App\User;
-use Hash;
+
+
 
 class PageController extends Controller
 {
@@ -41,12 +42,7 @@ class PageController extends Controller
     public function contact(){
         return view('customer.page.lienhe');
     }
-    public function dangki(){
-        return view('customer.page.dangki');
-    }
-    public function dangnhap(){
-        return view('customer.page.dangnhap');
-    }
+    
     public function search(Request $re){
         $product = Product::where('name', 'like', '%'.$re->search.'%')
                             ->orwhere('price', $re->search)->get();
@@ -58,38 +54,11 @@ class PageController extends Controller
         
         return view('customer.page.chitietsanpham', compact('product'));
     }
+    
 
-    public function gethome(){
+    public function getadmin(){
         return view('admin.home');
     }
-    public function postSign(Request $rq){
-        $this->validate($rq,
-            [
-                'name'=>'required',
-                'email'=>'required|email|unique:users,email',
-                'phone_number'=>'required',
-                'address'=>'required',
-                'password'=>'required|min:5|max:20',
-                're_password'=>'required|same:password'
-            ],
-            [
-                'email.required'=>'Vui lòng nhập email',
-                'email.email'=>'Email không đúng định dạng',
-                'email.unique'=>'Email này đã có người sử dụng',
-                'password.required'=>'Vui lòng nhập password',
-                'password.min'=>'Password ít nhất 5 kí tự',
-                'password.max'=>'Password tối đa 20 kí tự',
-                're_password.same'=>'Password không giống nhau'
-            ]
-            );
-            $user = new User();
-            $user->name = $rq->name;
-            $user->email = $rq->email;
-            $user->phone_number = $rq->phone_number;
-            $user->address = $rq->address;
-            $user->password = Hash::make('$rq->password');
-            $user->save();
-            return redirect()->back()->with('thanhcong', 'Tạo tài khoản thành công');
-    }
+
     
 }

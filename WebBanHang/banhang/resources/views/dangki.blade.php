@@ -16,9 +16,9 @@
                         @endforeach
                     </div>
                 @endif
-                @if( Session::has('thanhcong'))
+                @if( session('thanhcong'))
                     <div class="alert alert-success">
-                        {{Session::get('thanhcong')}}
+                        {{session('thanhcong')}}
                     </div>
                 @endif
                     <div class="mb-3 d-flex flex-column">

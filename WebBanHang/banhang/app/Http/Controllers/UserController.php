@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 
+
+use Illuminate\Support\Facades\Auth;
+
 class UserController extends Controller
 {
     /**
@@ -102,5 +105,73 @@ class UserController extends Controller
     {
         User::destroy($id);
         return redirect()->route('users.index');
+    }
+
+    public function dangki(){
+        return view('dangki');
+    }
+
+    public function dangnhap(){
+        return view('dangnhap');
+    }
+
+    public function dangxuat(){
+        Auth::logout();
+        return redirect()->route('trangchu');
+    }
+
+    public function postSign(Request $rq){
+        $this->validate($rq,
+            [
+                'name'=>'required',
+                'email'=>'required|email|unique:users,email',
+                'phone_number'=>'required',
+                'address'=>'required',
+                'password'=>'required|min:5|max:20',
+                're_password'=>'required|same:password'
+            ],
+            [
+                'email.required'=>'Vui lòng nhập email',
+                'email.email'=>'Email không đúng định dạng',
+                'email.unique'=>'Email này đã có người sử dụng',
+                'password.required'=>'Vui lòng nhập password',
+                'password.min'=>'Password ít nhất 5 kí tự',
+                'password.max'=>'Password tối đa 20 kí tự',
+                're_password.same'=>'Password không giống nhau'
+            ]
+            );
+            $user = new User();
+            $user->name = $rq->name;
+            $user->email = $rq->email;
+            $user->phone_number = $rq->phone_number;
+            $user->address = $rq->address;
+            
+            //$password = bcrypt($rq->password);
+            $user->password = bcrypt($rq->password);
+            $user->save();
+            return redirect()->back()->with('thanhcong', 'Tạo tài khoản thành công');
+    }
+    public function postLogin(Request $request){
+        $this->validate($request,
+            [
+                'email'=> 'required|email',
+                'password'=> 'required|min:5|max:20'
+            ],
+            [
+                'email.required'=> 'Vui lòng nhập email',
+                'email.email'=> 'Email không đúng định dạng',
+                'password.required'=> 'Vui lòng nhập mật khẩu'
+            ]           
+            );
+            $email = $request->email;
+            $password = $request->password;
+            //dd(bcrypt($password));
+            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+    
+                return redirect()->route('trangchu');
+            }
+            else{
+                return redirect()->back()->with('thongbao', 'Đăng nhập không thành công');
+            }
     }
 }

@@ -10,31 +10,30 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/dulieu', function(){
+/*Route::get('/dulieu', function(){
     return view("data.giaodien");
-});
+});*/
 
+
+/// Customer
 Route::get('/trangchu', 'PageController@home')->name('trangchu');
 Route::get('/sanpham', 'PageController@product')->name('sanpham');
 Route::get('/loaisanpham/{type}', 'PageController@producttype')->name('loaisanpham');
 Route::get('/lienhe', 'PageController@contact')->name('lienhe');
 Route::get('/gioithieu', 'PageController@introduce')->name('gioithieu');
-Route::get('/dangki', 'PageController@dangki')->name('dangki');
-Route::get('/dangnhap', 'PageController@dangnhap')->name('dangnhap');
+
 Route::get('/search', 'PageController@search')->name('search');
 Route::get('/chitietsanpham/{id}', 'PageController@chitiet')->name('chitietsanpham');
 
-Route::post('/postDangki', 'PageController@postSign')->name('postDangki');
+Route::get('/dangki', 'UserController@dangki')->name('dangki');
+Route::post('/postDangki', 'UserController@postSign')->name('postDangki');
+Route::get('/dangnhap', 'UserController@dangnhap')->name('dangnhap');
+Route::post('/postDangnhap', 'UserController@postLogin')->name('postDangnhap');
+Route::get('/dangxuat', 'UserController@dangxuat')->name('dangxuat');
 
-/*Route::get('/chitietsanpham', function(){
-    return view("page.chitietsanpham");
-});*/
 
 ///Admin
-/*Route::get('/home', function(){
-    return view("admin.home");
-});*/
-Route::get('/home', 'PageController@gethome')->name('home');
+Route::get('/admin', 'PageController@getadmin')->name('admin');
 
 ///Loại sản phẩm
 Route::get('/producttype', 'ProductTypeController@index')->name('producttype.index');
