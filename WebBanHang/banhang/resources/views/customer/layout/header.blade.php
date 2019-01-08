@@ -45,21 +45,29 @@
                         </div>
 
                     </form>
+
                     @if(Auth::check())
+                    
                     <button class="btn btn-outline-info mr-3"> 
-                        <a href="{{route('dangxuat')}}"> Đăng xuất </a> 
+                        <a href="{{route('dangxuat')}}" class="text-decoration-none"> Đăng xuất </a> 
                     </button>
+                    
+                    <button class="btn mr-3"> 
+                       Tài khoản,  
+                        <a href="" class="text-decoration-none"> {{Auth::user()->name}} ! </a> 
+                    </button>
+                    
                     @else
                     <button class="btn btn-outline-info mr-3"> 
-                        <a href="{{route('dangki')}}"> Đăng kí </a> 
+                        <a href="{{route('dangki')}}" class="text-decoration-none"> Đăng kí </a> 
                     </button>
                     <button class="btn btn-outline-info mr-3"> 
                         <a href="{{route('dangnhap')}}"> Đăng nhập </a>
                     </button>
                     @endif
 
-                    <button class="btn btn-outline-info" type="submit"> <i class="fas fa-shopping-cart"></i>
-                    </button>
+                    <!--<button class="btn btn-outline-info" type="submit"> <i class="fas fa-shopping-cart"></i>
+                    </button> -->
                 </div>
             </div>
         </div>
@@ -74,7 +82,7 @@
                 </div>
             </div>
         </div>
-    <div class="Menu container-fluid bg-info mb-5 Menu_Height">
+    <div class="sticky-top  Menu container-fluid bg-info mb-3 Menu_Height">
             <div class="row h-100">
                 <div class="col-md-12">
                     <nav class="navbar navbar-expand-lg navbar-light">

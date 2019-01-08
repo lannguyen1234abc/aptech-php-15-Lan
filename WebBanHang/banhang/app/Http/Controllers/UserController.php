@@ -88,7 +88,7 @@ class UserController extends Controller
             'name' => $request ->name,
             'email' => $request ->email,
             'phone_number' => $request ->phone_number,
-            'password' => $request ->password,
+            'password' => bcrypt($request ->password),
             'remember_token' => $request ->remember_token,
         ]);
         return redirect()->route('users.show', $id);
@@ -120,7 +120,7 @@ class UserController extends Controller
         return redirect()->route('trangchu');
     }
 
-    public function postSign(Request $rq){
+    public function postDangki(Request $rq){
         $this->validate($rq,
             [
                 'name'=>'required',
@@ -151,7 +151,7 @@ class UserController extends Controller
             $user->save();
             return redirect()->back()->with('thanhcong', 'Tạo tài khoản thành công');
     }
-    public function postLogin(Request $request){
+    public function postDangnhap(Request $request){
         $this->validate($request,
             [
                 'email'=> 'required|email',
@@ -166,12 +166,44 @@ class UserController extends Controller
             $email = $request->email;
             $password = $request->password;
             //dd(bcrypt($password));
-            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+            
+            if(Auth::attempt(['email' => $email , 'password' => $password])) {
     
                 return redirect()->route('trangchu');
             }
             else{
                 return redirect()->back()->with('thongbao', 'Đăng nhập không thành công');
             }
+    }
+
+    public function adminLogin(){
+        return view('loginadmin');
+    }
+
+    public function postAdminlogin(Request $r){
+        $this->validate($r,
+            [
+                'name'=> 'required',
+                'password'=> 'required|min:5|max:20'
+            ],
+            [
+                'name.required'=> 'Vui lòng nhập tên đăng nhập',
+                'password.required'=> 'Vui lòng nhập mật khẩu'
+            ]           
+            );
+            $name = $r->name;
+            $password = $r->password;
+            
+            //dd(bcrypt($password));
+            /*$user = User::with('roles')->where('name','Hường')->where('roles','admin')->get();
+            dd($user);*/
+            
+                if(Auth::attempt(['name' => $name , 'password' => $password])) {
+                    return redirect()->route('admin');
+                }
+                else{
+                    return redirect()->back()->with('thongbao', 'Đăng nhập không thành công');
+                }
+            
     }
 }

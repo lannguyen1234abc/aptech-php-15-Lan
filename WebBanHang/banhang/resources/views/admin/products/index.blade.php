@@ -1,6 +1,5 @@
-@extends('admin.master')
-
-@section('content2')
+@extends('admin.home')
+@section('content-right')
     
 <div class="container-fluid Admin_Size_content">
 <h1 class="text-center"> Products </h1>
@@ -31,7 +30,8 @@
                         <td> {{$product->new}} </td>
                         
                         
-                        <td class="d-flex flex-row justify-content-center">
+                        <td >
+                            <div class="d-flex flex-row justify-content-center">
                             <form action="{{route('products.show', $product->id)}}" method="GET">
                                 <button class='btn btn-danger ml-2'> SHOW </button>
                             </form>
@@ -46,7 +46,7 @@
                                 <input type='hidden' value='DELETE' name='_method'>
                                 <button type='submit' class='btn btn-warning ml-2'> DELETE </button>
                             </form>
-                                
+                            </div> 
                         </td> 
                     </tr>
                 @endforeach

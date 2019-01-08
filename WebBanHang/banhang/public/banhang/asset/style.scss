@@ -10,13 +10,13 @@
 }
 .Menu{
     &_Height{
-        height: 70px;
+        height: 60px;
     }
 }
 .Carousel{
     &_Left{
         &_Size{
-            height: 600px;
+            height: 400px;
             width: 100%;
         }
         &_Title{
@@ -25,7 +25,7 @@
     }
     &_Image1{
             border-radius: 15px;
-            height: 600px;
+            height: 400px;
             width: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -41,7 +41,7 @@
         font-size: 20px;
     }
     &_Image1{
-            height: 300px;
+            height: 200px;
             width: 100%;
             background-position: center;
             background-repeat: no-repeat;
@@ -54,7 +54,7 @@
     &_Size{
         &_content{
             width: 100%;
-            height: 500px;
+            height: 550px;
         }
         &_footer{
             width: 100%;

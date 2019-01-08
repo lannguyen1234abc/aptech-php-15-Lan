@@ -5,7 +5,7 @@
         <div class="col-md-2 bg-secondary shadow-lg rounded">
                 <div class="mb-3 text-white "> <h2> Dashboard </h2> </div>
                 
-                <div class="">
+                <div class="dropdown">
                     <a class="text-white" href="{{route('users.index')}}">
                     <i class="fas fa-user mr-2"></i>
                         Users
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                
+                     
                 <div class="dropdown">
                     <a class="text-white" href="{{route('products.index')}}">
                     <i class="fab fa-product-hunt mr-2"></i>

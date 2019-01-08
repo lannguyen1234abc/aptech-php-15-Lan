@@ -1,5 +1,6 @@
-@extends('admin.master')
-@section('content2')   
+@extends('admin.home')
+@section('content-right')
+
 <div class="container-fluid Admin_Size_content">
     <h1 class="text-center"> Product Type </h1>
     <table class="table table-hover table-bordered text-center">
@@ -22,7 +23,8 @@
                         <td> {{$type->created_at}} </td>
                         <td> {{$type->updated_at}} </td>
                         
-                        <td class="d-flex flex-row justify-content-center">
+                        <td >
+                        <div class="d-flex flex-row justify-content-center">
                             <form action="{{route('producttype.show', $type->id)}}" method="GET">
                                 <button class='btn btn-danger ml-2'> SHOW </button>
                             </form>
@@ -37,7 +39,7 @@
                                 <input type='hidden' value='DELETE' name='_method'>
                                 <button type='submit' class='btn btn-warning ml-2'> DELETE </button>
                             </form>
-                                
+                        </div>       
                         </td> 
                     </tr>
                 @endforeach

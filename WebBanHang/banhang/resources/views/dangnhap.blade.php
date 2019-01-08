@@ -25,7 +25,7 @@
 
                     <div class="mb-3 d-flex flex-column">
                         <lable> <b> <i class="fas fa-envelope"></i> Email</b> </lable>
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="text" placeholder="Username" name="email">
                     </div>
                     
                     <div class="mb-3 d-flex flex-column">

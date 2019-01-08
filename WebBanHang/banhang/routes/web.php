@@ -26,13 +26,15 @@ Route::get('/search', 'PageController@search')->name('search');
 Route::get('/chitietsanpham/{id}', 'PageController@chitiet')->name('chitietsanpham');
 
 Route::get('/dangki', 'UserController@dangki')->name('dangki');
-Route::post('/postDangki', 'UserController@postSign')->name('postDangki');
+Route::post('/postDangki', 'UserController@postDangki')->name('postDangki');
 Route::get('/dangnhap', 'UserController@dangnhap')->name('dangnhap');
-Route::post('/postDangnhap', 'UserController@postLogin')->name('postDangnhap');
+Route::post('/postDangnhap', 'UserController@postDangnhap')->name('postDangnhap');
 Route::get('/dangxuat', 'UserController@dangxuat')->name('dangxuat');
 
 
 ///Admin
+Route::get('/login/admin', 'UserController@adminLogin')->name('adminLogin');
+Route::post('/postAdminlogin', 'UserController@postAdminlogin')->name('postAdminlogin');
 Route::get('/admin', 'PageController@getadmin')->name('admin');
 
 ///Loại sản phẩm

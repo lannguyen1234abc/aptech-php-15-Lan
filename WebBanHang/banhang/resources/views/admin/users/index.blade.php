@@ -1,5 +1,5 @@
-@extends('admin.master')
-@section('content2')
+@extends('admin.home')
+@section('content-right')
 
 <div class="container-fluid Admin_Size_content">
     <h1 class="text-center"> Users </h1>
@@ -10,8 +10,7 @@
                 <th> Name </th>
                 <th> Email </th>
                 <th> Phone_number </th>
-                <th> Password </th>
-               
+                
                 <th> Action </th>
             </tr>
         </thead>
@@ -22,23 +21,20 @@
                         <td> {{$user->name}} </td>
                         <td> {{$user->email}} </td>
                         <td> {{$user->phone_number}} </td>
-                        <td> {{$user->password}} </td>
                         
                         
-                        
-                        <td class="d-flex flex-row justify-content-center">
-                            
+                        <td >
+                        <div class="d-flex flex-row justify-content-center">    
                             <form action="{{route('users.edit', $user->id)}}" method="GET">
                                 <button class='btn btn-success ml-2'> EDIT </button> 
                             </form>
                             
-
                             <form action="{{route('users.destroy', $user->id)}}" method="POST">
                                 {{csrf_field()}}
                                 <input type='hidden' value='DELETE' name='_method'>
                                 <button type='submit' class='btn btn-warning ml-2'> DELETE </button>
                             </form>
-                                
+                        </div>        
                         </td>
                     </tr>
                 @endforeach
