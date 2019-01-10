@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'email'->email,
             'phone_number'->phone_number,
             'address'->address,
+            'role'->role,
             'password'->password,
             'remember_token'->remember_token
         ]);

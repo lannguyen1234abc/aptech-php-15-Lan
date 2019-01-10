@@ -14,4 +14,7 @@ class Product extends Model
     public function billdetails(){
         return $this->belongsToMany('App\BillDetail', 'product_id');
     }
+    public function carts(){
+        return $this->belongsToMany('App\Cart', 'cart_detail','cart_id', 'product_id');
+    }
 }

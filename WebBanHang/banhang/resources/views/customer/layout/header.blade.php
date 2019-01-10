@@ -66,8 +66,9 @@
                     </button>
                     @endif
 
-                    <!--<button class="btn btn-outline-info" type="submit"> <i class="fas fa-shopping-cart"></i>
-                    </button> -->
+                    <button class="btn btn-outline-info" > 
+                        <a href="http://localhost:8000/giohang"> <i class="fas fa-shopping-cart"></i> </a>
+                    </button> 
                 </div>
             </div>
         </div>

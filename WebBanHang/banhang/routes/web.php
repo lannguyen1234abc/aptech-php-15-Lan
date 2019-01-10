@@ -14,6 +14,10 @@
     return view("data.giaodien");
 });*/
 
+Route::get('/giohang', function(){
+    return view("customer.page.cart");
+});
+
 
 /// Customer
 Route::get('/trangchu', 'PageController@home')->name('trangchu');
@@ -31,6 +35,8 @@ Route::get('/dangnhap', 'UserController@dangnhap')->name('dangnhap');
 Route::post('/postDangnhap', 'UserController@postDangnhap')->name('postDangnhap');
 Route::get('/dangxuat', 'UserController@dangxuat')->name('dangxuat');
 
+//Giỏ hàng
+Route::get('/giohang/{customer_id}', 'CartController@show')->name('giohang');
 
 ///Admin
 Route::get('/login/admin', 'UserController@adminLogin')->name('adminLogin');

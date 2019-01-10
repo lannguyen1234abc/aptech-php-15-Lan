@@ -49,17 +49,7 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $user = User::find($id);
-        return view('admin.users.show', ['user'=> $user]);
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -194,11 +184,10 @@ class UserController extends Controller
             $name = $r->name;
             $password = $r->password;
             
-            //dd(bcrypt($password));
-            /*$user = User::with('roles')->where('name','Hường')->where('roles','admin')->get();
-            dd($user);*/
             
-                if(Auth::attempt(['name' => $name , 'password' => $password])) {
+            //dd(bcrypt($password));
+            
+                if(Auth::attempt(['name' => $name , 'password' => $password, 'role'=>"admin"])) {
                     return redirect()->route('admin');
                 }
                 else{

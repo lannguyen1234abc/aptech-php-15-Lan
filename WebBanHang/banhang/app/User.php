@@ -30,8 +30,8 @@ class User extends Authenticatable
     public function bills(){
         return $this->hasMany('App\Bill');
     }
-
-    public function roles(){
-        return $this->belongsToMany('App\Role');
+    public function cart(){
+        return $this->hasOne('App\Cart');
     }
+    
 }
